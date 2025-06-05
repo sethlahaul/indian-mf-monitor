@@ -31,6 +31,21 @@ option = st.sidebar.selectbox(
     ["Search Funds", "SIP Calculator", "SIP Goal Planner"]
 )
 
+# Add stock analyzer link in sidebar
+st.sidebar.markdown("---")
+st.sidebar.subheader("📊 Related Tools")
+st.sidebar.markdown(
+    """
+    **Want to analyze individual stocks?**
+    
+    🔗 [Indian Stock Visualizer](https://indian-stock-visualizer.streamlit.app)
+    
+    Analyze NSE/BSE stocks with technical indicators, price charts, and fundamental data.
+    """,
+    unsafe_allow_html=True
+)
+st.sidebar.markdown("---")
+
 if option == "Search Funds":
     st.header("🔍 Search Mutual Funds")
     
@@ -88,7 +103,7 @@ if option == "Search Funds":
                             st.error("NAV data not available")
                             
                         # Get historical data from fund inception
-                        st.info("Complete historical data from fund inception.")
+                        st.info("Fetching complete historical data from fund inception...")
                         
                         # Try to get maximum historical data available
                         # Most funds have data going back several years, we'll try different ranges
@@ -217,42 +232,7 @@ if option == "Search Funds":
                                     (365, "1 Year"),
                                     (730, "2 Years"),
                                     (1095, "3 Years"),
-                                    (1825, "5 Years"),
-                                    (2190, "6 Years"),
-                                    (2555, "7 Years"),
-                                    (2920, "8 Years"),
-                                    (3285, "9 Years"),
-                                    (3650, "10 Years"),
-                                    (4015, "11 Years"),
-                                    (4380, "12 Years"),
-                                    (4745, "13 Years"),
-                                    (5110, "14 Years"),
-                                    (5475, "15 Years"),
-                                    (5840, "16 Years"),
-                                    (6205, "17 Years"),
-                                    (6570, "18 Years"),
-                                    (6935, "19 Years"),
-                                    (7300, "20 Years"),
-                                    (7665, "21 Years"),
-                                    (8030, "22 Years"),
-                                    (8395, "23 Years"),
-                                    (8760, "24 Years"),
-                                    (9125, "25 Years"),
-                                    (9490, "26 Years"),
-                                    (9855, "27 Years"),
-                                    (10220, "28 Years"),
-                                    (10585, "29 Years"),
-                                    (10950, "30 Years"),
-                                    (11315, "31 Years"),
-                                    (11680, "32 Years"),
-                                    (12045, "33 Years"),
-                                    (12410, "34 Years"),
-                                    (12775, "35 Years"),
-                                    (13140, "36 Years"),
-                                    (13505, "37 Years"),
-                                    (13870, "38 Years"),
-                                    (14235, "39 Years"),
-                                    (14600, "40 Years")
+                                    (1825, "5 Years")
                                 ]
                                 
                                 for days, period_name in time_periods:
