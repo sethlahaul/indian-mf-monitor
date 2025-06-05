@@ -2,3 +2,4 @@ streamlit
 mftool 
 plotly 
 pandas
+matplotlib
